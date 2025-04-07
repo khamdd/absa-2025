@@ -33,11 +33,3 @@ class SimpleTextProcessor:
         text = self.remove_extra_spaces(text)
         text = self.correct_spelling(text)
         return text
-
-# Example usage
-processor = SimpleTextProcessor()
-
-text = "I hve an amzing projct on ths!!!"
-processed_text = processor.preprocess_text(text)
-
-print(processed_text)
