@@ -31,7 +31,6 @@ class EnglishTextPreprocessor:
 
     def preprocess(self, text):
         text = self.cleaner.clean_text(text)
-        text = self.normalizer.normalize_text(text)
         return text
     
     def process_batch(self, texts):
