@@ -1,20 +1,6 @@
 import re
-# import string
-import nltk
-# from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
-
-# Ensure necessary NLTK resources are downloaded
-nltk.download('punkt')
-# nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('omw-1.4')
 
 class EnglishTextCleaner:
-    # def __init__(self):
-    #     self.stop_words = set(stopwords.words('english'))
-
     def remove_html_tags(self, text):
         return re.sub(r'<[^>]+>', '', text)
 
@@ -30,10 +16,6 @@ class EnglishTextCleaner:
     def remove_extra_whitespace(self, text):
         return re.sub(r'\s+', ' ', text).strip()
 
-    # def remove_stopwords(self, text):
-    #     tokens = word_tokenize(text)
-    #     return ' '.join([word for word in tokens if word.lower() not in self.stop_words])
-
     def clean_text(self, text):
         text = text.lower()
         text = self.remove_html_tags(text)
@@ -41,25 +23,11 @@ class EnglishTextCleaner:
         text = self.remove_emails(text)
         text = self.remove_special_characters(text)
         text = self.remove_extra_whitespace(text)
-        # text = self.remove_stopwords(text)
-        return text
-
-class EnglishTextNormalizer:
-    def __init__(self):
-        self.lemmatizer = WordNetLemmatizer()
-
-    def lemmatize_text(self, text):
-        tokens = word_tokenize(text)
-        return ' '.join([self.lemmatizer.lemmatize(word) for word in tokens])
-
-    def normalize_text(self, text):
-        text = self.lemmatize_text(text)
         return text
 
 class EnglishTextPreprocessor:
     def __init__(self):
         self.cleaner = EnglishTextCleaner()
-        self.normalizer = EnglishTextNormalizer()
 
     def preprocess(self, text):
         text = self.cleaner.clean_text(text)
