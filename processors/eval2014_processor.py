@@ -11,8 +11,8 @@ class PolarityMapping:
 
 class Eval2014Loader:
     @staticmethod
-    def load(train_csv_path, val_csv_path = None, test_csv_path = None):
-        dataset_paths = {'train': train_csv_path}
+    def load(train_csv_path, val_csv_path, test_csv_path):
+        dataset_paths = {'train': train_csv_path, 'val': val_csv_path, 'test': test_csv_path}
         raw_datasets = load_dataset('csv', data_files={ k: v for k, v in dataset_paths.items() if v })
         return raw_datasets
     

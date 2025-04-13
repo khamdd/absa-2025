@@ -6,12 +6,20 @@
   "dataset_size": 355197,
   "description": "",
   "download_checksums": {
-    "D:/UTS/Semester2/Research_Project/dataset/archive/dataset/experiment/../datasets/eval_2014/Restaurants_Train_v2.csv": {
-      "num_bytes": 260297,
+    "D:/UTS/Semester2/Research_Project/dataset/archive/dataset/experiment/../datasets/eval_2014/Restaurants_Train_v2_train.csv": {
+      "num_bytes": 182628,
+      "checksum": null
+    },
+    "D:/UTS/Semester2/Research_Project/dataset/archive/dataset/experiment/../datasets/eval_2014/Restaurants_Train_v2_dev.csv": {
+      "num_bytes": 38645,
+      "checksum": null
+    },
+    "D:/UTS/Semester2/Research_Project/dataset/archive/dataset/experiment/../datasets/eval_2014/Restaurants_Train_v2_test.csv": {
+      "num_bytes": 39144,
       "checksum": null
     }
   },
-  "download_size": 260297,
+  "download_size": 260417,
   "features": {
     "ambience": {
       "dtype": "int64",
@@ -57,12 +65,24 @@
   },
   "homepage": "",
   "license": "",
-  "size_in_bytes": 615494,
+  "size_in_bytes": 615614,
   "splits": {
     "train": {
       "name": "train",
-      "num_bytes": 355197,
-      "num_examples": 3041,
+      "num_bytes": 249006,
+      "num_examples": 2128,
+      "dataset_name": "csv"
+    },
+    "val": {
+      "name": "val",
+      "num_bytes": 52843,
+      "num_examples": 456,
+      "dataset_name": "csv"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 53348,
+      "num_examples": 457,
       "dataset_name": "csv"
     }
   },
